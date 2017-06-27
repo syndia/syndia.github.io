@@ -7,7 +7,7 @@ import Section from "../Section";
 import Container from "../Container";
 
 const Footer = ({ style, children }) =>
-  <Section style={[style, styles.root]}>
+  <Section accessibilityRole="contentinfo" style={[style, styles.root]}>
     {children && <View style={styles.children}>{children}</View>}
     <Container style={styles.container}>
       <Text style={styles.text}>

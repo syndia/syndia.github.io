@@ -1,8 +1,8 @@
 import React from "react";
 import { StyleSheet, View } from "react-primitives";
 
-const Section = ({ padded, style, children }) =>
-  <View style={[style, styles.root, padded && styles.padding]}>
+const Section = ({ padded, style, children, ...rest }) =>
+  <View {...rest} style={[style, styles.root, padded && styles.padding]}>
     {children}
   </View>;
 

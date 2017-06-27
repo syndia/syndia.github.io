@@ -10,10 +10,7 @@
     "predeploy": "npm run -s test",
     "deploy": "./scripts/deploy.sh"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/syndia/syndia.github.io.git"
-  },
+  "repository": "https://github.com/syndia/syndia.github.io.git",
   "keywords": [
     "site",
     "react",

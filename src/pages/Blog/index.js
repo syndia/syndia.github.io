@@ -5,6 +5,7 @@ import { StyleSheet } from "react-primitives";
 import ActivityIndicator from "../../internals/ActivityIndicator";
 import Page, { Banner, Container, Footer, Main } from "../../internals/Page";
 import { List as ArticlesList } from "../../internals/Article";
+import { Message as FilterMessage } from "../../internals/Filter";
 import Pagination from "../../widgets/Pagination";
 
 const PostsList = ({ isLoading, posts, ...rest }) =>
@@ -17,20 +18,35 @@ const PostsList = ({ isLoading, posts, ...rest }) =>
         posts.node &&
         posts.node.list &&
         <Container>
+          {rest.params &&
+            rest.params.tag &&
+            <FilterMessage
+              path="/posts"
+              paramName="tag"
+              items={rest.params.tag}
+              style={styles.message}
+            />}
           <ArticlesList items={posts.node.list} />
-          <Pagination
-            path={rest.location && rest.location.pathname}
-            items={posts}
-          />
+          <Pagination path="posts" items={posts} />
         </Container>}
     </Main>
     <Footer />
   </Page>;
 
 const styles = StyleSheet.create({
-  root: {}
+  root: {},
+  message: {
+    marginTop: 40,
+    marginBottom: 20
+  }
 });
 
 export default createContainer(PostsList, props => ({
-  posts: query({ collection: "posts", limit: 9, sortBy: "date" })
+  posts: query({
+    collection: "posts",
+    limit: 9,
+    sortBy: "date",
+    ...(props.params.after ? { after: props.params.after } : null),
+    ...(props.params.tag ? { by: "tags", value: props.params.tag } : {})
+  })
 }));

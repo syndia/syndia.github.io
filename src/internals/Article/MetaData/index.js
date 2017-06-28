@@ -11,7 +11,7 @@ const MetaData = ({ authors, date, relative, tags, style }) =>
     {tags &&
       tags.length &&
       <View>
-        <Link to={`/posts/tags/${tags[0]}`} style={styles.link}>
+        <Link to={`/posts/tag/${tags[0]}`} style={styles.link}>
           <Text style={[styles.text, styles.category]}>{tags[0]}</Text>
         </Link>
       </View>}

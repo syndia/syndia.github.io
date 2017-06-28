@@ -6,6 +6,7 @@ import ActivityIndicator from "../../internals/ActivityIndicator";
 import Page, { Banner, Container, Footer, Main } from "../../internals/Page";
 import Article, { MetaData } from "../../internals/Article";
 import MarkdownGenerated from "../../internals/MarkdownGenerated";
+import TagsList from "../../lists/TagsList";
 
 import NotFound from "../NotFound";
 
@@ -28,6 +29,8 @@ const Post = ({ hasError, isLoading, post, ...rest }) => {
             <Article>
               <MetaData {...post.node} />
               {post.node.body && <MarkdownGenerated body={post.node.body} />}
+              {post.node.tags &&
+                <TagsList path="/posts" items={post.node.tags} />}
             </Article>}
         </Container>
       </Main>

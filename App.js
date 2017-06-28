@@ -10,8 +10,20 @@ import { Blog, Homepage, NotFound, Post } from "./src/pages";
 const routes = () =>
   <Router history={browserHistory}>
     <Route path="/" component={Homepage} />
+    <Route
+      path="/posts/tag/:tag"
+      component={Blog}
+      collection="posts"
+      paginated
+    />
+    <Route
+      path="/posts/after/:after"
+      component={Blog}
+      collection="posts"
+      paginated
+    />
     <Route path="/posts/*" component={Post} collection="posts" />
-    <Route path="/posts" component={Blog} collection="posts" />
+    <Route path="/posts" component={Blog} collection="posts" paginated />
     <Route path="*" component={NotFound} />
   </Router>;
 

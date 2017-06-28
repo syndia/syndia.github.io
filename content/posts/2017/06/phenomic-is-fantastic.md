@@ -2,6 +2,9 @@
 date: 2017-06-28
 title: Phenomic is Fantastic
 headline: A fantastic website generator, easy setup...
+tags:
+  - react
+  - phenomic
 featured: true
 authors:
   - john-ripke

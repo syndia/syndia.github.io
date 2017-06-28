@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from "react-primitives";
 import Link from "../../Link";
 import Avatar from "../../Avatar";
 
-const Author = ({ id, name, headline, socials, compact, style, children }) =>
+const Author = ({ id, name, headline, /* socials, compact, */ style, children }) =>
   <View style={[style, styles.root]}>
     <Avatar style={[styles.cell, styles.avatar]} />
     <View style={[styles.cell, styles.container]}>

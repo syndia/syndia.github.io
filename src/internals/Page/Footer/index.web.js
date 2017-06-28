@@ -2,7 +2,6 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-primitives";
 
 import Link from "../../Link";
-
 import Section from "../Section";
 import Container from "../Container";
 

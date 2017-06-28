@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View } from "react-primitives";
+import { StyleSheet, Text, View } from "react-primitives";
 
 import Link from "../../internals/Link";
 
@@ -8,7 +8,7 @@ const Pagination = ({ items, path, style }) =>
     <View style={styles.cell}>
       {items.node &&
         items.node.hasNextPage &&
-        <Link to={`${path}/after/${items.node.next}`}>
+        <Link to={`${path}/after/${items.node.next}`} style={styles.link}>
           <Text style={styles.text}>{"Go Back in Time"}</Text>
         </Link>}
     </View>
@@ -21,6 +21,7 @@ const Pagination = ({ items, path, style }) =>
               ? path
               : `${path}/after/${items.node.previous}`
           }
+           style={styles.link}
         >
           <Text style={styles.text}>{"Go Forward in Time"}</Text>
         </Link>}

@@ -4,7 +4,7 @@ import webpack from "webpack";
 import ExtractTextPlugin from "extract-text-webpack-plugin";
 
 const nodeModules = path.join(process.cwd(), "node_modules");
-module.exports = (config: PhenomicConfig) => ({
+module.exports = (config) => ({
   entry: {
     [config.bundleName]: [
       process.env.PHENOMIC_ENV !== "static" &&

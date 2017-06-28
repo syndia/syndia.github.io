@@ -1,11 +1,9 @@
 import React from "react";
-import { StyleSheet } from "react-primitives";
+import { StyleSheet, View } from "react-primitives";
 
 import { Title as DocumentTitle } from "../../Document";
 import { Gradient as BackgroundGradient } from "../../Background";
-
 import { Heading } from "../../Typography";
-
 import Section from "../Section";
 import Container from "../Container";
 import Masterbar from "../Masterbar";

@@ -2,7 +2,6 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-primitives";
 
 import { version } from "../../../../package.json";
-
 import Link from "../../Link";
 
 const Masterbar = ({ style }) =>

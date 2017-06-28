@@ -7,6 +7,8 @@
     "start": "phenomic start",
     "build": "phenomic build",
     "test": "npm run -s build",
+    "lint:eslint": "eslint --ignore-path .gitignore --fix .",
+    "lint": "npm-run-all --parallel lint:*",
     "predeploy": "npm run -s test",
     "deploy": "./scripts/deploy.sh"
   },
@@ -40,7 +42,9 @@
     "eslint-config-i-am-meticulous": "^6.0.1",
     "eslint-plugin-flowtype": "^2.34.0",
     "eslint-plugin-react": "^7.1.0",
-    "eslint-plugin-react-native": "^2.3.2"
+    "eslint-plugin-react-native": "^2.3.2",
+    "extract-text-webpack-plugin": "^2.1.2",
+    "webpack": "^3.0.0"
   },
   "eslintConfig": {
     "root": true,

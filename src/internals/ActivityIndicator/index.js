@@ -64,7 +64,7 @@ class ActivityIndicator extends React.Component {
       <canvas
         width={actualSize}
         height={actualSize}
-        style={{
+        style={{ // eslint-disable-line react-native/no-inline-styles
           width: this.props.size,
           height: this.props.size,
           alignSelf: "center",

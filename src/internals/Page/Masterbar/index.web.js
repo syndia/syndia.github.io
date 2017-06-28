@@ -5,7 +5,7 @@ import { version } from "../../../../package.json";
 
 import Link from "../../Link";
 
-const Navigation = ({ style }) =>
+const Masterbar = ({ style }) =>
   <View accessibilityRole="navigation" style={[style, styles.root]}>
     <View style={styles.cell}>
       <Link to="/" style={styles.link}>
@@ -16,6 +16,11 @@ const Navigation = ({ style }) =>
         style={styles.link}
       >
         <Text style={[styles.text, styles.version]}>{`v${version}`}</Text>
+      </Link>
+    </View>
+    <View style={styles.cell}>
+      <Link to="/posts" style={styles.link}>
+        <Text style={styles.text}>{"Articles"}</Text>
       </Link>
     </View>
   </View>;
@@ -30,14 +35,15 @@ const styles = StyleSheet.create({
     textDecorationLine: "none",
     color: "inherit"
   },
-  text: {},
+  text: {
+    lineHeight: 24 * 1.25
+  },
   cell: {
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "baseline"
   },
   heading: {
-    lineHeight: 24 * 2,
     fontSize: 24
   },
   version: {
@@ -47,4 +53,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Navigation;
+export default Masterbar;

@@ -5,11 +5,13 @@ import { createApp, renderApp } from "@phenomic/preset-react-app/lib/client";
 import "./default.css";
 
 import Html from "./src/internals/Document/Html";
-import { Homepage, NotFound } from "./src/pages";
+import { Blog, Homepage, NotFound, Post } from "./src/pages";
 
 const routes = () =>
   <Router history={browserHistory}>
     <Route path="/" component={Homepage} />
+    <Route path="/posts/*" component={Post} collection="posts" />
+    <Route path="/posts" component={Blog} collection="posts" />
     <Route path="*" component={NotFound} />
   </Router>;
 

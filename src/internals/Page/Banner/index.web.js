@@ -8,13 +8,13 @@ import { Heading } from "../../Typography";
 
 import Section from "../Section";
 import Container from "../Container";
-import Navigation from "../Navigation";
+import Masterbar from "../Masterbar";
 
 const Banner = ({ headTitle, title, style, children }) =>
   <Section accessibilityRole="banner" style={styles.root}>
     <BackgroundGradient style={style} start="#eee" end="#ccc">
       <DocumentTitle text={headTitle || title} />
-      <Navigation />
+      <Masterbar />
       <Container style={styles.container}>
         <Heading level="1" style={styles.heading}>{title}</Heading>
         {children && <View style={styles.children}>{children}</View>}

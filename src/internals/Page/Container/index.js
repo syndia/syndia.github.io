@@ -1,16 +1,12 @@
-import React from "react";
-import { StyleSheet, View } from "react-primitives";
+import styled from "styled-components/primitives";
 
-const Container = ({ style, children }) =>
-  <View style={[style, styles.root]}>{children}</View>;
-
-const styles = StyleSheet.create({
-  root: {
-    flex: 1,
-    width: "100%",
-    maxWidth: 900,
-    marginHorizontal: "auto"
-  }
-});
+const Container = styled.View`
+  flex-grow: 1;
+  flex-shrink: 1;
+  width: 100%;
+  max-width: 900;
+  margin-left: auto;
+  margin-right: auto;
+`;
 
 export default Container;

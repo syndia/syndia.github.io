@@ -7,19 +7,26 @@ import Container from "../Container";
 
 const Footer = ({ style, children }) =>
   <Section accessibilityRole="contentinfo" style={[style, styles.root]}>
-    {children && <View style={styles.children}>{children}</View>}
+    {children &&
+      <View style={styles.children}>
+        {children}
+      </View>}
     <Container style={styles.container}>
       <Text style={styles.text}>
         {"Website by "}
       </Text>
       <Link href="https://www.syndia.nl" style={styles.link}>
-        <Text style={styles.text}>{"Syndia.nl"}</Text>
+        <Text style={styles.text}>
+          {"Syndia.nl"}
+        </Text>
       </Link>
       <Text style={styles.text}>
         {" Made with ♥ and "}
       </Text>
       <Link href="https://phenomic.io" target="_blank" style={styles.link}>
-        <Text style={styles.text}>{"<Phenomic />"}</Text>
+        <Text style={styles.text}>
+          {"<Phenomic />"}
+        </Text>
       </Link>
     </Container>
   </Section>;

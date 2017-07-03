@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-primitives";
 
-import Link from "../../Link";
+import { LinkButton } from "../../Button";
 
 import Author from "../Author";
 
@@ -11,9 +11,11 @@ const MetaData = ({ authors, date, relative, tags, style }) =>
     {tags &&
       tags.length &&
       <View>
-        <Link to={`/posts/tag/${tags[0]}`} style={styles.link}>
-          <Text style={[styles.text, styles.category]}>{tags[0]}</Text>
-        </Link>
+        <LinkButton to={`/posts/tag/${tags[0]}`}>
+          <Text style={[styles.text, styles.category]}>
+            {tags[0]}
+          </Text>
+        </LinkButton>
       </View>}
   </View>;
 
@@ -23,14 +25,8 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center"
   },
-  link: {
-    textDecorationLine: "none",
-    color: "inherit"
-  },
   text: {
-    fontWeight: "300",
-    fontSize: 13,
-    opacity: 0.4
+    fontWeight: "400"
   }
 });
 

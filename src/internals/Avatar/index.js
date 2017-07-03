@@ -1,17 +1,22 @@
 import React from "react";
-import { StyleSheet, View } from "react-primitives";
+import styled from "styled-components/primitives";
 
-const Avatar = ({ style }) => <View style={[styles.root, style]} />;
+const StyledAvatar = styled.View`
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  width: ${props => props.size || "100px"};
+  height: ${props => props.size || "100px"};
+  border-radius: ${props => props.radius || "99999px"};
+  border-style: solid;
+  border-width: 8px;
+  background-color: ${props => props.theme.colorPrimary};
+`;
 
-const styles = StyleSheet.create({
-  root: {
-    alignSelf: "center",
-    width: 100,
-    height: 100,
-    borderRadius: 99999,
-    borderStyle: "solid",
-    borderWidth: "8"
-  }
-});
+const Avatar = ({ name, style }) => {
+  if (!name) throw new Error("Avatar requires a name");
+
+  return <StyledAvatar style={style} />;
+};
 
 export default Avatar;

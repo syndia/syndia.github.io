@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-primitives";
 
-import Link from "../../Link";
+import { LinkButton } from "../../Button";
 
 const FilterMessage = ({ path, paramName, items, style }) =>
   <View style={[style, styles.root]}>
@@ -12,25 +12,17 @@ const FilterMessage = ({ path, paramName, items, style }) =>
       <strong>{` ${items} `}</strong>
     </Text>
     <Text style={styles.text}>{`${paramName}. `}</Text>
-    <Link to={`${path}`} style={styles.link}>
-      <Text style={(styles.text, styles.linkText)}>{"View all"}</Text>
-    </Link>
+    <LinkButton to={`${path}`}>
+      <Text style={(styles.text, styles.linkText)}>
+        {"View all"}
+      </Text>
+    </LinkButton>
   </View>;
 
 const styles = StyleSheet.create({
   root: {
     flexDirection: "row",
     alignItems: "center"
-  },
-  link: {
-    paddingVertical: 4,
-    paddingHorizontal: 6,
-    borderColor: "#222",
-    borderRadius: 4,
-    borderStyle: "solid",
-    borderWidth: 2,
-    textDecorationLine: "none",
-    color: "inherit"
   },
   text: {
     fontSize: 14,

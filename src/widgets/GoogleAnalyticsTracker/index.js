@@ -21,7 +21,10 @@ export default class GoogleAnalyticsTracker extends Component {
   }
 
   componentWillReceiveProps(next) {
-    if (next.location.pathname !== this.props.location.pathname) {
+    if (
+      next.location &&
+      next.location.pathname !== this.props.location.pathname
+    ) {
       this.logPageview();
     }
   }

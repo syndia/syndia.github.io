@@ -4,7 +4,7 @@ import webpack from "webpack";
 import ExtractTextPlugin from "extract-text-webpack-plugin";
 
 const nodeModules = path.join(process.cwd(), "node_modules");
-module.exports = (config) => ({
+module.exports = config => ({
   entry: {
     [config.bundleName]: [
       process.env.PHENOMIC_ENV !== "static" &&
@@ -28,7 +28,10 @@ module.exports = (config) => ({
         options: {
           babelrc: false,
           presets: [require.resolve("@phenomic/babel-preset")],
-          plugins: [require.resolve("react-hot-loader/babel")]
+          plugins: [
+            require.resolve("react-hot-loader/babel")
+            // require.resolve("babel-plugin-styled-components")
+          ]
         }
       },
       {

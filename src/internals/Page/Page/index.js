@@ -1,25 +1,26 @@
 import React from "react";
 import Head from "react-helmet";
-import { StyleSheet, View } from "react-primitives";
+import styled, { ThemeProvider } from "styled-components/primitives";
 
+import defaultTheme from "../../../../themes/default";
 import GoogleAnalyticsTracker from "../../../widgets/GoogleAnalyticsTracker";
 
-const Page = ({ style, children, ...rest }) =>
-  <View style={[style, styles.root]}>
-    <Head>
-      <meta charSet="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-    </Head>
-    <GoogleAnalyticsTracker {...rest}>
-      {children}
-    </GoogleAnalyticsTracker>
-  </View>;
+const StyledPageView = styled.View`
+  position: relative;
+  width: 100%;
+`;
 
-const styles = StyleSheet.create({
-  root: {
-    position: "relative",
-    width: "100%"
-  }
-});
+const Page = ({ theme, style, children, ...rest }) =>
+  <ThemeProvider theme={theme || defaultTheme}>
+    <StyledPageView style={style}>
+      <Head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
+      <GoogleAnalyticsTracker {...rest}>
+        {children}
+      </GoogleAnalyticsTracker>
+    </StyledPageView>
+  </ThemeProvider>;
 
 export default Page;

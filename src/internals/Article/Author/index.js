@@ -4,16 +4,29 @@ import { StyleSheet, Text, View } from "react-primitives";
 import Link from "../../Link";
 import Avatar from "../../Avatar";
 
-const Author = ({ id, name, headline, /* socials, compact, */ style, children }) =>
+const Author = ({
+  id,
+  name,
+  headline,
+  /* socials, compact, */ style,
+  children
+}) =>
   <View style={[style, styles.root]}>
-    <Avatar style={[styles.cell, styles.avatar]} />
+    <Avatar name={name} style={[styles.cell, styles.avatar]} />
     <View style={[styles.cell, styles.container]}>
       <Link to={`/authors/${id}`} style={styles.link}>
-        <Text style={[styles.text, styles.heading]}>{name}</Text>
+        <Text style={[styles.text, styles.heading]}>
+          {name}
+        </Text>
       </Link>
-      {headline && <Text style={styles.text}>{headline}</Text>}
+      {headline &&
+        <Text style={styles.text}>
+          {headline}
+        </Text>}
       {children &&
-        <Text style={[styles.text, styles.children]}>{children}</Text>}
+        <Text style={[styles.text, styles.children]}>
+          {children}
+        </Text>}
     </View>
   </View>;
 
@@ -39,7 +52,6 @@ const styles = StyleSheet.create({
     width: 75,
     height: 75,
     marginRight: 20,
-    backgroundColor: "#eee",
     borderColor: "#ddd"
   },
   heading: {

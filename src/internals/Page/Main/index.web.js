@@ -1,15 +1,14 @@
 import React from "react";
-import { StyleSheet } from "react-primitives";
+import styled from "styled-components/primitives";
 
 import Section from "../Section";
 
-const Main = ({ style, ...rest }) =>
-  <Section {...rest} style={[styles.root, style]} accessibilityRole="main" />;
+const StyledSection = styled(Section)`
+  flex-grow: 1;
+  flex-shrink: 1;
+`;
 
-const styles = StyleSheet.create({
-  root: {
-    flex: 1
-  }
-});
+const Main = ({ style, ...rest }) =>
+  <StyledSection {...rest} style={style} accessibilityRole="main" />;
 
 export default Main;

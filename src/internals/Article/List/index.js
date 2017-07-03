@@ -10,6 +10,6 @@ const List = ({ items, style }) =>
 
 const styles = StyleSheet.create({
   root: {}
-})
+});
 
 export default List;

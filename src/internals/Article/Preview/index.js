@@ -12,7 +12,7 @@ const Preview = ({ post, style }) =>
     <Link to={`/posts/${post.id}`} style={styles.link}>
       <Row>
         <Image
-          source={{ uri: "http://via.placeholder.com/275x150" }}
+          source={{ uri: "https://via.placeholder.com/275x150" }}
           style={styles.image}
         />
 

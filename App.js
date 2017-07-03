@@ -10,6 +10,7 @@ import { Blog, Homepage, NotFound, Post } from "./src/pages";
 const routes = () =>
   <Router history={browserHistory}>
     <Route path="/" component={Homepage} />
+    <Route path="/posts" component={Blog} collection="posts" paginated />
     <Route
       path="/posts/tag/:tag"
       component={Blog}
@@ -23,7 +24,6 @@ const routes = () =>
       paginated
     />
     <Route path="/posts/*" component={Post} collection="posts" />
-    <Route path="/posts" component={Blog} collection="posts" paginated />
     <Route path="*" component={NotFound} />
   </Router>;
 

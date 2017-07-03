@@ -34,7 +34,6 @@ const PostsList = ({ isLoading, posts, ...rest }) =>
   </Page>;
 
 const styles = StyleSheet.create({
-  root: {},
   message: {
     marginTop: 40,
     marginBottom: 20

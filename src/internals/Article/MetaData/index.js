@@ -2,10 +2,9 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-primitives";
 
 import { LinkButton } from "../../Button";
-
 import Author from "../Author";
 
-const MetaData = ({ authors, date, relative, tags, style }) =>
+const MetaData = ({ authors, /* date, relative, */ tags, style }) =>
   <View style={[style, styles.root]}>
     {authors && authors.length && <Author {...authors[0]} compact />}
     {tags &&

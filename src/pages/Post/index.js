@@ -1,13 +1,12 @@
 import React from "react";
 import { createContainer, query } from "@phenomic/preset-react-app/lib/client";
-import { StyleSheet, View } from "react-primitives";
+import { StyleSheet } from "react-primitives";
 
 import ActivityIndicator from "../../internals/ActivityIndicator";
 import Page, { Banner, Container, Footer, Main } from "../../internals/Page";
 import Article, { MetaData } from "../../internals/Article";
 import MarkdownGenerated from "../../internals/MarkdownGenerated";
 import TagsList from "../../lists/TagsList";
-
 import NotFound from "../NotFound";
 
 const Post = ({ hasError, isLoading, post, ...rest }) => {

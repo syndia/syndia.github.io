@@ -2,10 +2,10 @@ import React from "react";
 import { Router, Route, browserHistory } from "react-router";
 import { createApp, renderApp } from "@phenomic/preset-react-app/lib/client";
 
-import "./default.css";
+import "./styles/global.js";
 
-import Html from "./src/internals/Document/Html";
-import { Blog, Homepage, NotFound, Post } from "./src/pages";
+import Html from "./components/internals/Document/Html";
+import { Blog, Homepage, NotFound, Post } from "./components/pages";
 
 const routes = () =>
   <Router history={browserHistory}>

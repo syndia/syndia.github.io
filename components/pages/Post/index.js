@@ -1,6 +1,5 @@
 import React from "react";
 import { createContainer, query } from "@phenomic/preset-react-app/lib/client";
-import { StyleSheet } from "react-primitives";
 
 import ActivityIndicator from "../../internals/ActivityIndicator";
 import Page, { Banner, Container, Footer, Main } from "../../internals/Page";
@@ -13,7 +12,7 @@ const Post = ({ hasError, isLoading, post, ...rest }) => {
   if (hasError) return <NotFound error={post.error} />;
 
   return (
-    <Page {...rest} style={styles.root}>
+    <Page {...rest}>
       <Banner
         title={
           (!isLoading && post && post.node && post.node.title) || "Loading..."
@@ -37,10 +36,6 @@ const Post = ({ hasError, isLoading, post, ...rest }) => {
     </Page>
   );
 };
-
-const styles = StyleSheet.create({
-  root: {}
-});
 
 export default createContainer(Post, ({ params: { splat }, ...rest }) => ({
   post: query({ collection: "posts", id: splat, ...rest })

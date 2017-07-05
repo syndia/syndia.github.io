@@ -1,5 +1,6 @@
 import React from "react";
-import { StyleSheet, View } from "react-primitives";
+import { View } from "react-primitives";
+import styled from "styled-components/primitives";
 
 import { Title as DocumentTitle } from "../../Document";
 import { Gradient as BackgroundGradient } from "../../Background";
@@ -8,31 +9,30 @@ import Section from "../Section";
 import Container from "../Container";
 import Masterbar from "../Masterbar";
 
+const StyledContainer = styled(Container)`
+  align-items: center;
+`;
+
+const StyledHeading = styled(Heading)`
+  padding-top: 20;
+  padding-bottom: 60;
+`;
+
 const Banner = ({ headTitle, title, style, children }) =>
   <Section accessibilityRole="banner">
     <BackgroundGradient style={style} start="#eee" end="#ccc">
       <DocumentTitle text={headTitle || title} />
       <Masterbar />
-      <Container style={styles.container}>
-        <Heading level="1" style={styles.heading}>
+      <StyledContainer>
+        <StyledHeading aria-level="1">
           {title}
-        </Heading>
+        </StyledHeading>
         {children &&
           <View>
             {children}
           </View>}
-      </Container>
+      </StyledContainer>
     </BackgroundGradient>
   </Section>;
-
-const styles = StyleSheet.create({
-  container: {
-    alignItems: "center"
-  },
-  heading: {
-    paddingTop: 40,
-    paddingBottom: 60
-  }
-});
 
 export default Banner;

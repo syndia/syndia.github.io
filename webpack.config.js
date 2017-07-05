@@ -1,7 +1,7 @@
-import path from "path";
+const path = require("path");
 
-import webpack from "webpack";
-import ExtractTextPlugin from "extract-text-webpack-plugin";
+const webpack = require("webpack");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const nodeModules = path.join(process.cwd(), "node_modules");
 module.exports = config => ({
@@ -29,8 +29,8 @@ module.exports = config => ({
           babelrc: false,
           presets: [require.resolve("@phenomic/babel-preset")],
           plugins: [
-            require.resolve("react-hot-loader/babel")
-            // require.resolve("babel-plugin-styled-components")
+            require.resolve("react-hot-loader/babel"),
+            require.resolve("babel-plugin-styled-components")
           ]
         }
       },

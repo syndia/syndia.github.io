@@ -1,6 +1,7 @@
 import React from "react";
 import { Link as RouterLink } from "react-router";
 import { StyleSheet } from "react-primitives";
+import { omit } from "lodash";
 
 const Link = ({ activeClassName, activeStyle, className, style, ...rest }) => {
   const injectedProps = {
@@ -21,7 +22,7 @@ const Link = ({ activeClassName, activeStyle, className, style, ...rest }) => {
     injectedProps.activeStyle = undefined;
   }
 
-  return <RouterLink {...rest} {...injectedProps} />;
+  return <RouterLink {...omit(rest, "primary")} {...injectedProps} />;
 };
 
 export default Link;

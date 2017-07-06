@@ -5,11 +5,12 @@ import shade from "polished/lib/color/shade";
 import { bodyFont, headerFont, monospace } from "../utilities/fonts";
 
 const colors = {
-  primary: "mediumorchid",
-  secondary: "orchid",
-  dark: "indigo",
-  light: "thistle",
+  primary: "royalblue",
+  secondary: ["chocolate", "brown", "maroon"],
+  dark: "darkgreen",
+  light: "lightgreen",
   paper: "white",
+  whitesmoke: "whitesmoke",
   dimgray: "dimgray",
   shadow: "rgba(0, 0, 0, 0.1)"
 };

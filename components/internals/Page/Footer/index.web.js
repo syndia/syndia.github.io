@@ -7,6 +7,10 @@ import Link from "../../Link";
 import Row from "../../Row";
 import Section from "../Section";
 
+const StyledSection = styled(Section)`
+  background: ${props => props.theme.colors.whitesmoke};
+`;
+
 const StyledRow = styled(Row)`
   flex-grow: 0;
   justify-content: center;
@@ -21,7 +25,7 @@ const Text = styled.Text`
 `;
 
 const Footer = ({ style, children }) =>
-  <Section accessibilityRole="contentinfo" style={style}>
+  <StyledSection accessibilityRole="contentinfo" style={style}>
     {children &&
       <View style={styles.children}>
         {children}
@@ -44,7 +48,7 @@ const Footer = ({ style, children }) =>
         </Text>
       </Link>
     </StyledRow>
-  </Section>;
+  </StyledSection>;
 
 const styles = StyleSheet.create({
   link: {

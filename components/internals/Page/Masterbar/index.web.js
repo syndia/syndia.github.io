@@ -10,6 +10,7 @@ import Link from "../../Link";
 import SocialItem from "../../Social/Item";
 
 const RootView = styled(Row)`
+  flex-grow: 0;
   justify-content: space-between;
 `;
 
